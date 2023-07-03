@@ -1,0 +1,26 @@
+{
+    "name": "romain/rendu-1",
+    "description": "Find out about upcoming films !",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Romain\\Rendu1\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "romainmltr",
+            "email": "romain.malaterre@joyjet.com"
+        }
+    ],
+    "require": {
+        "symfony/http-client": "^6.3",
+        "symfony/dom-crawler": "^6.3",
+        "symfony/css-selector": "^6.3"
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^1.10",
+        "phpunit/phpunit": "^9.6 || ^10.2"
+    }
+}
