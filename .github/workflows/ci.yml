@@ -1,0 +1,28 @@
+name: CI
+
+on :
+  push:
+  pull_request:
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        php: [8.0, 8.1, 8.2]
+
+      steps:
+        - name: 'Init respository'
+          uses: action/checkout@v3
+        - name: 'setUp PHP'
+          uses: shivammathur/setup-php@v2
+          with:
+            tools: composer
+        - names: 'install dependecies'
+          run : composer install
+        - names : "run test"
+          run : vendor/bin/phpunit tests
+        - names: "run phpStan"
+          run: php vendor/bin/phpstan analyse src --level max
+
