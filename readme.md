@@ -19,7 +19,7 @@ php vendor/bin/phpstan analyse src tests --level max
 ```
 
 ```bash
-php vendor/bin/phpunit
+php vendor/bin/phpunit tests
 ```
 
 ## Usage 👨‍🚀
@@ -29,10 +29,23 @@ require_once 'vendor/autoload.php';
 
 use Romain\Rendu1\FilmScraper;
 
+function printFilmReleases(array $filmReleases): void
+{
+    foreach ($filmReleases as $film) {
+        echo "Title: " . $film['title'] . "\n";
+        echo "Genres:\n";
+        foreach ($film['genres'] as $genre) {
+            echo "- " . $genre . "\n";
+        }
+        echo "\n";
+    }
+}
+
 $filmScraper = new FilmScraper();
 $filmReleases = $filmScraper->scrapeNextFilmReleases();
 
-var_dump($filmReleases);
+printFilmReleases($filmReleases);
+
 ```
 
 

@@ -1,5 +1,4 @@
 <?php
-
 use PHPUnit\Framework\TestCase;
 use Romain\Rendu1\FilmScraper;
 
@@ -10,11 +9,10 @@ class FilmScraperTest extends TestCase
         $filmScraper = new FilmScraper();
         $filmReleases = $filmScraper->scrapeNextFilmReleases();
 
-        var_dump($filmReleases);
+        // Comment indicating that film information has been retrieved
+        echo "Test Unitair 1 : Film information retrieved.\n";
 
-
-        $this->assertNotEmpty($filmReleases, 'Aucune date de sortie de film n\'a été récupérée.');
-
-
+        $this->assertNotEmpty($filmReleases, ' Test Unitair 1 : No film release dates were retrieved.');
     }
 }
+
