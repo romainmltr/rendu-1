@@ -5,7 +5,7 @@ It provides a simple and convenient way to retrieve upcoming film releases.
 To install the library, you can use Composer. Run the following command in your project directory:
 
 ```bash
-composer require romainmltr/iim-td2  
+composer require romain/rendu-1
 ```
 
 ## Local development 📡
